@@ -286,6 +286,11 @@ class TypeGraph(BasicGraph):
         f = open(abs_file_dir, 'r')
         return f
 
+    def load_from_file(self, file_dir):
+        f = open(file_dir)
+        j = json.loads(f.read())
+        self.load(j, 1)
+
     def load(self, j, m):
         self.m = m
         titles = j.keys()
